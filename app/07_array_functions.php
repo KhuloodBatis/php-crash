@@ -54,4 +54,21 @@ $c = array_combine($a,$b);
 //flipped value => key 
 
 $flipped = array_flip($c);
-print_r($flipped);
+// print_r($flipped);
+
+$numbers = range(1,20);
+
+// print_r($numbers);
+$newNumbers = array_map(function($number){
+    return "number is " . $number;
+}, $numbers);
+// print_r($newNumbers);
+$lessTen = array_filter($numbers,function ($number){
+    return $number <=10;
+});
+// print_r($lessTen);
+
+$sum = array_reduce($numbers,function($carr,$number){
+    return $carr + $number ;
+});
+var_dump($sum);
